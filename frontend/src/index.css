@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+@theme {
+  --color-health-green: #22c55e;
+  --color-health-blue: #3b82f6;
+  --color-health-soft: #f0fdf4;
+}
+
+body {
+  @apply bg-slate-50 text-slate-900;
+}
