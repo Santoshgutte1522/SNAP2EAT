@@ -2,6 +2,8 @@ import pkg from "whatsapp-web.js";
 const { Client, LocalAuth } = pkg;
 import qrcode from "qrcode-terminal";
 
+const isProduction = process.env.NODE_ENV === "production";
+
 // 1. Initialize the WhatsApp Client
 const client = new Client({
   authStrategy: new LocalAuth(), // Saves your login session locally
