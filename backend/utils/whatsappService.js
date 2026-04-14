@@ -7,13 +7,15 @@ const client = new Client({
   authStrategy: new LocalAuth(), // Saves your login session locally
   puppeteer: {
     // Crucial for 4GB RAM: Points to your existing Chrome
-    executablePath:
-      "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
-    headless: true, // Set to false if you want to see the browser pop up during demo
+    executablePath: isProduction
+      ? null
+      : "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+    headless: true,
     args: [
       "--no-sandbox",
       "--disable-setuid-sandbox",
       "--disable-dev-shm-usage",
+      "--disable-gpu",
     ],
   },
 });
